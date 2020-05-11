@@ -26,7 +26,7 @@ download_es_systems(){
 install() {
     echo "Install Drastic"
     cd /userdata/ || exit
-    download_drastic
+    download_drastic > /dev/null 2>&1
     tar -xvf drastic.tar.gz
     rm -f drastic.tar.gz
     chmod 644 "/userdata/drastic/game_database.xml"
