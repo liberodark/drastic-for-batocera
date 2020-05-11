@@ -35,9 +35,7 @@ install() {
     chmod 644 "/userdata/drastic/game_database.xml"
     #chmod +x "/userdata/drastic/drastic"
     mkdir -p "/userdata/roms/nds"
-    #mount -o remount,rw /
     download_es_systems
-    #mount -o remount,ro /
     batocera-save-overlay
     /etc/init.d/S31emulationstation restart > /dev/null 2>&1
     echo "Done."
