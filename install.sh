@@ -16,28 +16,28 @@ echo "Welcome on Drastic Install Script $version"
 download_drastic(){
    echo "Download Drastic"
    wget https://github.com/liberodark/drastic-for-batocera/releases/download/2.4.0.0p/drastic.tar.gz > /dev/null 2>&1
+   tar -xvf drastic.tar.gz
+   rm -f drastic.tar.gz
 }
 
 download_es_systems(){
    echo "Download es_systems"
    wget https://raw.githubusercontent.com/liberodark/drastic-for-batocera/master/es_systems.cfg > /dev/null 2>&1
+   cp -a /usr/share/emulationstation/es_systems.cfg /usr/share/emulationstation/es_systems.cfg.bak
+   cp -a es_systems.cfg /usr/share/emulationstation/es_systems.cfg
+   rm -f es_systems.cfg
 }
 
 install() {
     echo "Install Drastic"
     cd /userdata/ || exit
     download_drastic
-    tar -xvf drastic.tar.gz
-    rm -f drastic.tar.gz
     chmod 644 "/userdata/drastic/game_database.xml"
     #chmod +x "/userdata/drastic/drastic"
     mkdir -p "/userdata/roms/nds"
+    #mount -o remount,rw /
     download_es_systems
-    mount -o remount,rw /
-    cp -a /usr/share/emulationstation/es_systems.cfg /usr/share/emulationstation/es_systems.cfg.bak
-    cp -a es_systems.cfg /usr/share/emulationstation/es_systems.cfg
-    rm -f es_systems.cfg
-    mount -o remount,ro /
+    #mount -o remount,ro /
     batocera-save-overlay
     /etc/init.d/S31emulationstation restart > /dev/null 2>&1
     echo "Done."
