@@ -36,6 +36,7 @@ install() {
     mount -o remount,rw /
     cp -a /usr/share/emulationstation/es_systems.cfg /usr/share/emulationstation/es_systems.cfg.bak
     cp -a es_systems.cfg /usr/share/emulationstation/es_systems.cfg
+    rm -f es_systems.cfg
     mount -o remount,ro /
     batocera-save-overlay
     /etc/init.d/S31emulationstation restart > /dev/null 2>&1
