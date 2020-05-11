@@ -40,3 +40,5 @@ install() {
     /etc/init.d/S31emulationstation restart
     echo "Done."
 }
+
+install
