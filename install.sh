@@ -23,8 +23,8 @@ download_drastic(){
 download_es_systems(){
    echo "Download es_systems"
    wget https://raw.githubusercontent.com/liberodark/drastic-for-batocera/master/es_systems.cfg > /dev/null 2>&1
-   cp -a /usr/share/emulationstation/es_systems.cfg /usr/share/emulationstation/es_systems.cfg.bak
-   cp -a es_systems.cfg /usr/share/emulationstation/es_systems.cfg
+   mv /userdata/system/configs/emulationstation/es_systems.cfg /userdata/system/configs/emulationstation/es_systems.cfg.bak
+   mv es_systems.cfg /userdata/system/configs/emulationstation/es_systems.cfg
    rm -f es_systems.cfg
 }
 
