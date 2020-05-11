@@ -15,9 +15,9 @@ echo "Welcome on Drastic Install Script $version"
 
 download_drastic(){
    echo "Download Drastic"
-   wget https://github.com/liberodark/drastic-for-batocera/releases/download/2.4.0.0p/drastic.tar.gz > /dev/null 2>&1
-   tar -xvf drastic.tar.gz
-   rm -f drastic.tar.gz
+   wget https://github.com/liberodark/drastic-for-batocera/releases/download/2.4.0.0p/drastic.zip > /dev/null 2>&1
+   unzip -Do drastic.tar.gz
+   rm -f drastic.zip
 }
 
 download_es_systems(){
