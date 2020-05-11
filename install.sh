@@ -15,18 +15,18 @@ echo "Welcome on Drastic Install Script $version"
 
 download_drastic(){
    echo "Download Drastic"
-   wget https://github.com/liberodark/drastic-for-batocera/releases/download/2.4.0.0p/drastic.tar.gz
+   wget https://github.com/liberodark/drastic-for-batocera/releases/download/2.4.0.0p/drastic.tar.gz > /dev/null 2>&1
 }
 
 download_es_systems(){
    echo "Download es_systems"
-   wget https://raw.githubusercontent.com/liberodark/drastic-for-batocera/master/es_systems.cfg
+   wget https://raw.githubusercontent.com/liberodark/drastic-for-batocera/master/es_systems.cfg > /dev/null 2>&1
 }
 
 install() {
     echo "Install Drastic"
     cd /userdata/ || exit
-    download_drastic > /dev/null 2>&1
+    download_drastic
     tar -xvf drastic.tar.gz
     rm -f drastic.tar.gz
     chmod 644 "/userdata/drastic/game_database.xml"
