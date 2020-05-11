@@ -30,6 +30,7 @@ install() {
     tar -xvf drastic.tar.gz
     rm -f drastic.tar.gz
     chmod 644 "/userdata/drastic/game_database.xml"
+    #chmod +x "/userdata/drastic/drastic"
     mkdir -p "/userdata/roms/nds"
     download_es_systems
     mount -o remount,rw /
