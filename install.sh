@@ -25,13 +25,13 @@ download_es_systems(){
 
 install() {
     echo "Install Drastic"
-    mount -o remount,rw /
     cd /userdata/ || exit
     download_drastic
     tar -xvf drastic.tar.gz
     chmod 644 "/userdata/drastic/game_database.xml"
     mkdir -p "/userdata/roms/nds"
     download_es_systems
+    mount -o remount,rw /
     cp -a /usr/share/emulationstation/es_systems.cfg /usr/share/emulationstation/es_systems.cfg.bak
     cp -a es_systems.cfg /usr/share/emulationstation/es_systems.cfg
     mount -o remount,ro /
