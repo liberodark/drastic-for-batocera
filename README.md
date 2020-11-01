@@ -1,5 +1,7 @@
 # Drastic for Batocera
 
+That is only POC not use on your install
+
 ## How to Use :
 
 ```
