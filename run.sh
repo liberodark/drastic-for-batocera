@@ -6,6 +6,6 @@ export LC_ALL=C
 cd "$(dirname "$(realpath "$0")")" || exit
 
 # Run the game
-LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:./usr/lib" ./drastic
+LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:./usr/lib" ./eka2l1
 
 exit 0

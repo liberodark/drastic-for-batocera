@@ -1,28 +1,28 @@
 #!/bin/bash
 #
-# About: Install Drastic automatically
-# Author: liberodark
+# About: Install Eka2l1 automatically
+# Author: soaresden
 # Thanks : 
 # License: GNU GPLv3
 
-version="0.0.1"
+version="1.0"
 
-echo "Welcome on Drastic Install Script $version"
+echo "Welcome on Eka2l1 Install Script $version"
 
 # Libs
 # libasound2-dev libsdl2-dev zlib1g-dev
 
 
-download_drastic(){
-   echo "Download Drastic"
-   wget https://github.com/liberodark/drastic-for-batocera/releases/download/2.4.0.0p/drastic.zip > /dev/null 2>&1
-   unzip -Do drastic.zip
-   rm -f drastic.zip
+download_eka2l1(){
+   echo "Download Eka2l1"
+   wget https://github.com/EKA2L1/EKA2L1/releases/download/continous/ubuntu-latest.zip > /dev/null 2>&1
+   unzip -Do ubuntu-latest.zip
+   rm -f ubuntu-latest.zip
 }
 
 download_es_systems(){
    echo "Download es_systems"
-   wget https://raw.githubusercontent.com/liberodark/drastic-for-batocera/master/es_systems.cfg > /dev/null 2>&1
+   wget https://raw.githubusercontent.com/soaresden/drastic-for-batocera/master/es_systems.cfg > /dev/null 2>&1
    if [ -e "/userdata/system/configs/emulationstation/es_systems.cfg" ]; then
    mv /userdata/system/configs/emulationstation/es_systems.cfg /userdata/system/configs/emulationstation/es_systems.cfg.bak
    fi
@@ -31,12 +31,12 @@ download_es_systems(){
 }
 
 install() {
-    echo "Install Drastic"
+    echo "Install Eka2l1"
     cd /userdata/ || exit
-    download_drastic
-    chmod 644 "/userdata/drastic/game_database.xml"
-    #chmod +x "/userdata/drastic/drastic"
-    mkdir -p "/userdata/roms/nds"
+    download_eka2l1
+    chmod 644 "/userdata/eka2l1/game_database.xml"
+    #chmod +x "/userdata/eka2l1/eka2l1"
+    mkdir -p "/userdata/roms/n-gage"
     download_es_systems
     batocera-save-overlay
     /etc/init.d/S31emulationstation restart > /dev/null 2>&1
